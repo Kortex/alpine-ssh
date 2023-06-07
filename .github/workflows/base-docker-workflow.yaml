@@ -7,10 +7,10 @@ on:
         required: true
         type: string
         description: The path to the dockerfile to use for the docker image
-      image-tag:
+      image-tags:
         required: true
         type: string
-        description: The image tag to use for the docker image
+        description: A comma separated list of tags to apply to the docker image
     secrets:
       DOCKER_USERNAME:
         required: true
@@ -48,6 +48,6 @@ jobs:
           context: .
           file: ${{ inputs.dockerfile-path }}
           push: true
-          tags: ${{ inputs.image-tag }}
+          tags: ${{ inputs.image-tags }}
           platforms: linux/amd64,linux/arm64
         id: docker_build_push
