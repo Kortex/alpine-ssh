@@ -13,7 +13,7 @@ jobs:
   build:
     uses: ./.github/workflows/base-docker-build-push.yaml
     with:
-      dockerfile-path: ${{ github.workspace/ssh-client/3.18.0/Dockerfile }}
+      dockerfile-path: ${{ github.workspace }}/ssh-client/3.18.0/Dockerfile
       image-tag      : ${{ vars.DOCKER_IMAGE_NAME }}:3.18.0
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
