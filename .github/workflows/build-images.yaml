@@ -10,9 +10,9 @@ defaults:
     shell: bash
 
 jobs:
-  build:
-    name: build:3.18.0
-    uses: ./.github/workflows/base-docker-build-push.yaml
+  docker:
+    name: build-push:3.18.0
+    uses: ./.github/workflows/base-docker-workflow.yaml
     with:
       dockerfile-path: ./3.18.0/Dockerfile
       image-tag      : ${{ vars.DOCKER_IMAGE_NAME }}:3.18.0
