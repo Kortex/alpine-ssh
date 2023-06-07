@@ -11,7 +11,7 @@ defaults:
 
 jobs:
   docker:
-    name: build-push:3.18.0
+    name: v3.18.0
     uses: ./.github/workflows/base-docker-workflow.yaml
     with:
       dockerfile-path: ./3.18.0/Dockerfile
