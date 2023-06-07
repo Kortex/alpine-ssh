@@ -1,6 +1,6 @@
-MAINTAINER ariskourt
-
 FROM alpine:3.18.0
+
+MAINTAINER ariskourt
 
 ARG USER=ssh
 ENV HOME /home/$USER
