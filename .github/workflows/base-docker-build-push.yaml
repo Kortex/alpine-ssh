@@ -6,14 +6,18 @@ on:
       dockerfile-path:
         required: true
         type: string
+        description: The path to the dockerfile to use for the docker image
       image-tag:
         required: true
         type: string
+        description: The image tag to use for the docker image
     secrets:
       DOCKER_USERNAME:
         required: true
+        description: The docker use name that logs in to Dockerhub
       DOCKER_TOKEN:
         required: true
+        description: The docker token that logs in to Dockerhub
 
 jobs:
   build-push:
