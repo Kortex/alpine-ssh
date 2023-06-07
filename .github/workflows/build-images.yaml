@@ -1,0 +1,20 @@
+name: Build and push docker image
+
+on:
+  push:
+    branches:
+      - main
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    uses: ./base-docker-build-push.yaml
+    with:
+      dockerfile-path: Dockerfile
+      image-tag      : ${{ secrets.DOCKER_IMAGE_NAME }}:3.18.0
+    secrets:
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_TOKEN   : ${{ secrets.DOCKER_TOKEN }}
