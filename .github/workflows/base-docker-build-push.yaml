@@ -37,10 +37,10 @@ jobs:
         id: docker_login
 
       - name: Build and push
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v4
         with:
           context: .
-          dockerfile: ${{ inputs.dockerfile-path }}
+          file: ${{ inputs.dockerfile-path }}
           push: true
           tags: ${{ inputs.image-tag }}
         id: docker_build_push
