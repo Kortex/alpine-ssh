@@ -15,7 +15,7 @@ jobs:
     uses: ./.github/workflows/base-docker-workflow.yaml
     with:
       dockerfile-path: ./3.18.0/Dockerfile
-      image-tag      : ${{ vars.DOCKER_IMAGE_NAME }}:3.18.0,${{ vars.DOCKER_IMAGE_NAME }}:latest
+      image-tags     : ${{ vars.DOCKER_IMAGE_NAME }}:3.18.0,${{ vars.DOCKER_IMAGE_NAME }}:latest
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_TOKEN   : ${{ secrets.DOCKER_TOKEN }}
