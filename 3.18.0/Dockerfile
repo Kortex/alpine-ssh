@@ -8,13 +8,17 @@ ENV HOME /home/$USER
 RUN apk add --update sudo
 
 RUN adduser -D $USER \
-        && echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER \
-        && chmod 0440 /etc/sudoers.d/$USER
+    && echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER \
+    && chmod 0440 /etc/sudoers.d/$USER
 
 RUN apk add --no-cache \
-      openssh-client \
-      ca-certificates \
-      bash
+    openssh-client \
+    ca-certificates \
+    bash
 
 USER $USER
+
+RUN mkdir $HOME/.ssh \
+    && chmod 700 $HOME/.ssh
+
 WORKDIR $HOME
