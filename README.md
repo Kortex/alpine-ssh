@@ -1,3 +1,6 @@
-A simple docker image installing SSH and Bash on the default Alpine image.
+# Alpine SSH client
 
-Note that images produced by this run as non-root
+This project's aim is to provide a simple SSH client based on Alpine Linux. The base image use is Alpine 3.18.2 but 
+various others can be configured if required.
+
+The produced image contains an installation of ssh, bash and curl. Note also that the image runs with a non-root user.

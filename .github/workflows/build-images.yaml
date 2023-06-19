@@ -10,21 +10,12 @@ defaults:
     shell: bash
 
 jobs:
-  docker-alpine:
-    name: alpine-v3.18.0-non-root
+  alpine:
+    name: alpine-v3.18.2
     uses: ./.github/workflows/base-docker-workflow.yaml
     with:
-      dockerfile-path: ./3.18.0/Dockerfile
-      image-tags     : ${{ vars.DOCKER_IMAGE_NAME }}:3.18.0
-    secrets:
-      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-      DOCKER_TOKEN   : ${{ secrets.DOCKER_TOKEN }}
-  docker-debian:
-    name: debian-stable-slim
-    uses: ./.github/workflows/base-docker-workflow.yaml
-    with:
-      dockerfile-path: ./debian-stable/Dockerfile
-      image-tags     : ${{ vars.DOCKER_IMAGE_NAME }}:stable-slim
+      dockerfile-path: ./3.18.2/Dockerfile
+      image-tags     : ${{ vars.DOCKER_IMAGE_NAME }}:3.18.2
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_TOKEN   : ${{ secrets.DOCKER_TOKEN }}
