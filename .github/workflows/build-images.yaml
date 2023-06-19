@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '3.18.2/**'
 
 defaults:
   run:
