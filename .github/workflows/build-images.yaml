@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - '3.18.2/**'
+      - '3.18/**'
 
 defaults:
   run:
@@ -13,11 +13,11 @@ defaults:
 
 jobs:
   alpine:
-    name: alpine-v3.18.2
+    name: alpine-v3.18
     uses: ./.github/workflows/base-docker-workflow.yaml
     with:
-      dockerfile-path: ./3.18.2/Dockerfile
-      image-tags     : ${{ vars.DOCKER_IMAGE_NAME }}:3.18.2
+      dockerfile-path: ./3.18/Dockerfile
+      image-tags     : ${{ vars.DOCKER_IMAGE_NAME }}:3.18
     secrets:
       DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       DOCKER_TOKEN   : ${{ secrets.DOCKER_TOKEN }}
