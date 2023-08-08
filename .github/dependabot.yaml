@@ -1,6 +1,6 @@
 version: 2
 updates:
   - package-ecosystem: docker
-    directory: ./3.18.2/
+    directory: ./3.18/
     schedule:
       interval: weekly
